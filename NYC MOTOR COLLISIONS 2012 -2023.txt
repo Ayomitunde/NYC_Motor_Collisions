@@ -1,0 +1,28 @@
+					NYC MOTOR COLLISIONS 2012 -2023
+Data Cleaning & Preprocessing 
+1. Import the necessary libraries
+2. Load and read the dataset to be used, it was sourced from Kaggle
+3. Checking the structure of the dataset; col_name, column type and missing values %.
+4. Checking for duplicates: CRASH_DATE has 99.8% of duplicate values, since CRASH_DATE is very important to the analysis, there is no need for it to be removed.
+5. For columns whose missing values is less than 50%, dropna is applied.
+6. For columns whose missing values is more than 50%, drop_columns is applied.
+7. VEHICLE_TYPE_CODE 1, CONTRIBUTING FACTOR VEHICLE 1 are renamed to VEHICLE TYPE & CONTRIBUTING FACOR.
+8. CRASH DATE's datatype was changed from str to datetime[ns], CRASH YEAR, CRASH MONTH and DAY were derived from CRASH DATE.
+9.HOUR_of_COLLISION was derived from CRASH TIME and it's datatype was changed from str to integer.
+10.TIME_DAY was created by defining a function "time_category", it was then applied to HOUR_of_COLLISION to create TIME_DAY.
+11. Column "VEHICLE_TYPE features was partially cleaned.
+
+Data Insights 
+1. Total number of crashes over the years is 87,154
+2. Frequency of crashes over the years: Between 2012-2017, crashes in New York rose and declined gradually over the years, but from 2018 till recent years, its frequency has been reducing gradually.
+A quick google search shows that 2018 was the safest year for motorists [ref : New York Times], Total_Deaths each year shows that 2018 recorded the lowest number of deaths in each year.
+Average Yearly Deaths also reports that since 2018, average crashes have dropped yearly.
+Since 2018 has been pinpointed as the safest year for New York motorists, let take a further look at it:
+a. At the beginning of the year(i.e. January - February), crashes are lower, peak back up during summer months(i.e. June - July) 
+b. The same results in (a) is further proven when you look at Total Deaths per month in 2018.
+3. Distribution of Crashes across Boroughs:
+	a. Brooklyn and Queens are reported to be borough with the most cases of crashes reported 
+	b. Borough stats also reports that Brooklyn and Queens are borough with the most reported cases in terms of deaths and injuries.
+Breaking it down further to road users across boroughs, Brooklyn still maintains its top position as the unsafest borough across all road user category. While Queens position as the second unsafest borough for road users changes when it comes to Pedestrians, that position goes to Manhattan.
+4. Distribution of Vehicles involved in crashes : Passenger vehicles are the type of vehicles that are mostly involved in these crashes.
+5.Reasons for these crashes are unspecified, even with New York's advanced traffic control methods, human behaviour can be predicted. 
